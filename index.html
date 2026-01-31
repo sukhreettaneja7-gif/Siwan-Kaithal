@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siwan (Municipal Committee) | Kaithal District, Haryana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #ff6b35;
+            --primary-blue: #004e98;
+            --accent-blue: #3a86ff;
+            --dark-bg: #0f1419;
+            --card-bg: #1a1f2e;
+            --card-hover: #242936;
+            --text-primary: #ffffff;
+            --text-secondary: #b8c1cc;
+            --border-color: #2d3748;
+            --success-green: #06d6a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .top-bar-item {
+            font-size: 0.85rem;
+            opacity: 0.95;
+        }
+
+        /* Header */
+        .header {
+            background: var(--card-bg);
+            padding: 1.5rem 5%;
+            border-bottom: 3px solid var(--primary-orange);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .emblem {
+            width: 70px;
+            height: 70px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 3px solid var(--primary-orange);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .emblem img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 5px;
+        }
+
+        .site-title h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .site-title p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 78, 152, 0.95) 0%, rgba(58, 134, 255, 0.85) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+            background-size: cover;
+            padding: 4rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:nth-child(1) { animation: fadeInUp 1s ease-out 0.6s forwards; }
+        .stat-card:nth-child(2) { animation: fadeInUp 1s ease-out 0.8s forwards; }
+        .stat-card:nth-child(3) { animation: fadeInUp 1s ease-out 1s forwards; }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Section */
+        .section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .section-header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-orange), var(--accent-blue));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-top: 1.5rem;
+        }
+
+        /* Map Section */
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .map-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .map-card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .map-card:hover {
+            border-color: var(--primary-orange);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+        }
+
+        .map-image-container {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            background: var(--card-hover);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .map-card:hover .map-image {
+            transform: scale(1.1);
+        }
+
+        .map-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .map-info {
+            padding: 2rem;
+        }
+
+        .map-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .map-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Chart Grid */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .chart-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .chart-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chart-card:hover {
+            border-color: var(--primary-orange);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.15);
+        }
+
+        .chart-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .chart-icon {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--accent-blue));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Bar Chart */
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .bar-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .bar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bar-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .bar-percentage {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-orange);
+        }
+
+        .bar-container {
+            height: 40px;
+            background: var(--card-hover);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-orange) 0%, var(--accent-blue) 100%);
+            border-radius: 20px;
+            width: 0;
+            transition: width 2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+        }
+
+        .bar-fill.animate {
+            width: var(--width);
+        }
+
+        /* Pie Chart */
+        .pie-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .pie-chart-wrapper {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .pie-chart {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pie-center-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .pie-center-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+        }
+
+        .pie-center-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .pie-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--card-hover);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .legend-item:hover {
+            background: var(--border-color);
+            transform: translateX(5px);
+        }
+
+        .legend-color {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .legend-content {
+            flex: 1;
+        }
+
+        .legend-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .legend-value {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-orange);
+            margin-top: 0.3rem;
+        }
+
+        /* Villages Section */
+        .villages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .village-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .village-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .village-card:hover::before {
+            left: 100%;
+        }
+
+        .village-card:hover {
+            border-color: var(--primary-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+        }
+
+        .village-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .village-icon {
+            color: var(--primary-orange);
+        }
+
+        .village-info {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 3rem;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--card-hover);
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--primary-orange);
+            color: var(--text-primary);
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin-bottom: 2rem;
+        }
+
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+
+        .detail-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+
+        .detail-list strong {
+            color: var(--text-primary);
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .info-card.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .info-card:hover {
+            border-color: var(--primary-orange);
+            transform: translateY(-5px);
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--accent-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .info-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Schools Section */
+        .schools-container {
+            margin-top: 3rem;
+        }
+
+        .school-category {
+            margin-bottom: 3rem;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, var(--primary-orange), var(--accent-blue));
+            padding: 1.5rem 2rem;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-header:hover {
+            transform: translateX(5px);
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .category-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .school-list {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 15px 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+
+        .school-list.expanded {
+            max-height: 2000px;
+            padding: 1.5rem;
+        }
+
+        .school-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: var(--card-hover);
+            border-radius: 10px;
+            border-left: 3px solid var(--primary-orange);
+            transition: all 0.3s ease;
+        }
+
+        .school-item:hover {
+            background: var(--border-color);
+            transform: translateX(5px);
+            border-left-color: var(--accent-blue);
+        }
+
+        .school-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            padding: 3rem 5%;
+            border-top: 3px solid var(--primary-orange);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-text strong {
+            color: var(--primary-orange);
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--accent-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 3rem 5%;
+            }
+
+            .section {
+                padding: 3rem 5%;
+            }
+
+            .pie-container {
+                flex-direction: column;
+            }
+
+            .top-bar {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .header-content {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .modal-content {
+                padding: 2rem;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        .loading {
+            background: linear-gradient(
+                90deg,
+                var(--card-hover) 0%,
+                var(--border-color) 50%,
+                var(--card-hover) 100%
+            );
+            background-size: 1000px 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--primary-orange), var(--accent-blue));
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-orange);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="top-bar-item">📍 District: Kaithal</div>
+            <div class="top-bar-item">🏛️ State: Haryana</div>
+        </div>
+        <div class="top-bar-item">📮 Pincode: 136033</div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="site-title">
+                    <h1>Siwan (Municipal Committee)</h1>
+                    <p>Kaithal District, Haryana</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Gateway to Heritage & Progress</h2>
+            <p>Community Development Block serving 41 villages with rich cultural history and modern infrastructure</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">41</span>
+                    <span class="stat-label">Villages Under Block</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">70.51%</span>
+                    <span class="stat-label">Literacy Rate</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">85</span>
+                    <span class="stat-label">Total Schools</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Geographic Maps Section -->
+    <section class="section">
+        <div class="section-header" data-observe>
+            <h2 class="section-title">Geographic Context</h2>
+            <p class="section-subtitle">Maps showing Siwan's ward divisions and location in Kaithal District</p>
+        </div>
+
+        <div class="map-grid">
+            <div class="map-card" data-observe>
+                <div class="map-image-container">
+                    <img class="map-image" src="Siwan-K.jpg" alt="Kaithal District Map showing Siwan" />
+                </div>
+                <div class="map-info">
+                    <h3 class="map-title">Siwan in Kaithal District</h3>
+                    <p class="map-description">District map showing Siwan's location, roads, tehsils and neighboring areas</p>
+                </div>
+            </div>
+            <div class="map-card" data-observe>
+                <div class="map-image-container">
+                    <img class="map-image" src="Siwan.jpg" alt="Siwan Ward Map" />
+                </div>
+                <div class="map-info">
+                    <h3 class="map-title">Siwan Ward Map</h3>
+                    <p class="map-description">Detailed ward-wise municipal boundaries and divisions of Siwan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Literacy Statistics -->
+    <section class="section" style="background: var(--card-bg);">
+        <div class="section-header" data-observe>
+            <h2 class="section-title">Literacy Statistics</h2>
+            <p class="section-subtitle">Educational attainment across demographics</p>
+        </div>
+
+        <div class="chart-grid">
+            <div class="chart-card" data-observe>
+                <h3 class="chart-title">
+                    <span class="chart-icon">📊</span>
+                    Literacy Rate Comparison
+                </h3>
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-header">
+                            <span class="bar-label">Male Literacy</span>
+                            <span class="bar-percentage">77.28%</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="--width: 77.28%" data-animate></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-header">
+                            <span class="bar-label">Female Literacy</span>
+                            <span class="bar-percentage">63.06%</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="--width: 63.06%" data-animate></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-header">
+                            <span class="bar-label">Overall Siwan</span>
+                            <span class="bar-percentage">70.51%</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="--width: 70.51%" data-animate></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-header">
+                            <span class="bar-label">Haryana Average</span>
+                            <span class="bar-percentage">75.55%</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="--width: 75.55%" data-animate></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card" data-observe>
+                <h3 class="chart-title">
+                    <span class="chart-icon">👥</span>
+                    Gender Distribution
+                </h3>
+                <div class="pie-container">
+                    <div class="pie-chart-wrapper">
+                        <canvas id="genderPieChart" class="pie-chart"></canvas>
+                    </div>
+                    <div class="pie-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: linear-gradient(135deg, #ff6b35, #ff8c61);"></div>
+                            <div class="legend-content">
+                                <span class="legend-label">Male Population</span>
+                                <div class="legend-value">54.5%</div>
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: linear-gradient(135deg, #3a86ff, #6ba3ff);"></div>
+                            <div class="legend-content">
+                                <span class="legend-label">Female Population</span>
+                                <div class="legend-value">45.5%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Infrastructure -->
+    <section class="section">
+        <div class="section-header" data-observe>
+            <h2 class="section-title">Educational Infrastructure</h2>
+            <p class="section-subtitle">85 schools serving the Siwan block area</p>
+        </div>
+
+        <div class="chart-grid">
+            <div class="chart-card" data-observe>
+                <h3 class="chart-title">
+                    <span class="chart-icon">🏫</span>
+                    Schools Distribution
+                </h3>
+                <div class="pie-container">
+                    <div class="pie-chart-wrapper">
+                        <canvas id="schoolsPieChart" class="pie-chart"></canvas>
+                        <div class="pie-center-text">
+                            <div class="pie-center-number">85</div>
+                            <div class="pie-center-label">Total Schools</div>
+                        </div>
+                    </div>
+                    <div class="pie-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: linear-gradient(135deg, #ff6b35, #ff8c61);"></div>
+                            <div class="legend-content">
+                                <span class="legend-label">Government Schools</span>
+                                <div class="legend-value">48 Schools (56.5%)</div>
+                            </div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: linear-gradient(135deg, #3a86ff, #6ba3ff);"></div>
+                            <div class="legend-content">
+                                <span class="legend-label">Private Schools</span>
+                                <div class="legend-value">37 Schools (43.5%)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card" data-observe>
+                <h3 class="chart-title">
+                    <span class="chart-icon">🎓</span>
+                    School Types
+                </h3>
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-header">
+                            <span class="bar-label">Senior Secondary</span>
+                            <span class="bar-percentage">15 Schools</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="--width: 88%" data-animate></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-header">
+                            <span class="bar-label">High Schools</span>
+                            <span class="bar-percentage">10 Schools</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="--width: 59%" data-animate></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-header">
+                            <span class="bar-label">Middle Schools</span>
+                            <span class="bar-percentage">8 Schools</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="--width: 47%" data-animate></div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-header">
+                            <span class="bar-label">Primary Schools</span>
+                            <span class="bar-percentage">52 Schools</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" style="--width: 100%" data-animate></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schools List -->
+        <div class="schools-container">
+            <div class="school-category">
+                <div class="category-header" onclick="toggleSchools('govt-schools')">
+                    <div class="category-title">
+                        <span>🏛️</span>
+                        Government Schools
+                    </div>
+                    <div class="category-count">48 Schools</div>
+                </div>
+                <div class="school-list" id="govt-schools">
+                    <div class="school-item">1. Government Model Sanskriti Senior Secondary School, Siwan</div>
+                    <div class="school-item">2. PM SHRI Government Girls Senior Secondary School, Siwan</div>
+                    <div class="school-item">3. Government Senior Secondary School, Kangthali</div>
+                    <div class="school-item">4. Government Senior Secondary School, Kawartan</div>
+                    <div class="school-item">5. Government Senior Secondary School, Kharak</div>
+                    <div class="school-item">6. Government Senior Secondary School, Kheri Gulam Ali</div>
+                    <div class="school-item">7. Government High School, Sotha</div>
+                    <div class="school-item">8. Government High School, Ladana Chakku</div>
+                    <div class="school-item">9. Government School, Kakheri</div>
+                    <div class="school-item">10. Government School, Sair</div>
+                    <div class="school-item">11. Government Primary School, Siwan</div>
+                    <div class="school-item">12. Government Primary School, Swarag Dwar (Siwan)</div>
+                    <div class="school-item">13. Government Primary School, Dera Jhabran</div>
+                    <div class="school-item">14. Government Primary School, Dera Sandhwa</div>
+                    <div class="school-item">15. Government Primary School, Dera Uttam Singh</div>
+                    <div class="school-item">16. Government Primary School, Harijan Basti (Siwan)</div>
+                    <div class="school-item">17. Government Primary School, Harnola</div>
+                    <div class="school-item">18. Government Primary School, Sotha</div>
+                    <div class="school-item">19. Government Primary School, Sotha Road (Siwan)</div>
+                    <div class="school-item">20. Government Primary School, Gurdaspur</div>
+                    <div class="school-item">21. Government Primary School, Khanpur</div>
+                    <div class="school-item">22. Government Primary School, Malikpur</div>
+                    <div class="school-item">And 26 more government schools across the block...</div>
+                </div>
+            </div>
+
+            <div class="school-category">
+                <div class="category-header" onclick="toggleSchools('private-schools')">
+                    <div class="category-title">
+                        <span>🎒</span>
+                        Private Schools
+                    </div>
+                    <div class="category-count">37 Schools</div>
+                </div>
+                <div class="school-list" id="private-schools">
+                    <div class="school-item">1. DAV Public School, Siwan</div>
+                    <div class="school-item">2. Siwan Public School, Siwan</div>
+                    <div class="school-item">3. Indus Public School Jr. Wing, Siwan</div>
+                    <div class="school-item">4. S.S. Bal Sadan High School, Siwan</div>
+                    <div class="school-item">5. Geeta S.D. Senior Secondary School, Siwan</div>
+                    <div class="school-item">6. Yogeshwar Senior Secondary School, Siwan</div>
+                    <div class="school-item">7. Shri Sharda Rattan High School, Siwan</div>
+                    <div class="school-item">8. Mata Gujri Senior Secondary School, Kangthali</div>
+                    <div class="school-item">9. The Millennium School, Kakheri</div>
+                    <div class="school-item">10. Shishu Niketan Senior Secondary School, Bhuna</div>
+                    <div class="school-item">11. B P R Public School, Dera Himmatpura-Polar</div>
+                    <div class="school-item">12. National Model School, Siwan</div>
+                    <div class="school-item">13. Maharishi Dayanand Middle School, Siwan</div>
+                    <div class="school-item">14. Navratan Primary School, Siwan</div>
+                    <div class="school-item">15. R.K.S.D. Public Primary School, Siwan</div>
+                    <div class="school-item">16. Glorious International Pre School, Siwan</div>
+                    <div class="school-item">17. Little Roses Play School, Siwan</div>
+                    <div class="school-item">18. Guru Nanak Public High School, Kharoudi</div>
+                    <div class="school-item">19. Siri Guru Teg Bahadur Senior Secondary Public School, Bahir Jachchh</div>
+                    <div class="school-item">20. Satya Bharti Primary School, Sotha</div>
+                    <div class="school-item">And 17 more private schools across the block...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Villages Section -->
+    <section class="section" style="background: var(--card-bg);">
+        <div class="section-header" data-observe>
+            <h2 class="section-title">41 Villages Under Siwan Block</h2>
+            <p class="section-subtitle">Click on any village to view detailed information</p>
+        </div>
+
+        <div class="villages-grid" id="villagesGrid"></div>
+    </section>
+
+    <!-- Key Information -->
+    <section class="section">
+        <div class="section-header" data-observe>
+            <h2 class="section-title">Key Information</h2>
+            <p class="section-subtitle">Essential details about Siwan Block</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card" data-observe>
+                <div class="info-card-header">
+                    <div class="info-card-icon">🏛️</div>
+                    <h3>Administration</h3>
+                </div>
+                <ul>
+                    <li>📮 Pincode: 136033</li>
+                    <li>🗳️ Constituency: Guhla (SC)</li>
+                    <li>👤 Chairperson: Hemlata Saini (BJP)</li>
+                    <li>🏢 Total Wards: 16</li>
+                    <li>🚔 Police Station: Dedicated</li>
+                    <li>📋 Sub-Tehsil: Under Kaithal</li>
+                    <li>🏛️ Status: Municipal Committee</li>
+                </ul>
+            </div>
+
+            <div class="info-card" data-observe>
+                <div class="info-card-header">
+                    <div class="info-card-icon">🌍</div>
+                    <h3>Geography</h3>
+                </div>
+                <ul>
+                    <li>🏔️ Altitude: 242m above sea level</li>
+                    <li>📍 Coordinates: 29.8872°N, 76.3547°E</li>
+                    <li>🏛️ From Chandigarh: 118 km</li>
+                    <li>🌏 Time Zone: IST (UTC +5:30)</li>
+                    <li>🗺️ Borders: Punjab (North)</li>
+                    <li>🌾 Terrain: Plains, Agricultural</li>
+                </ul>
+            </div>
+
+            <div class="info-card" data-observe>
+                <div class="info-card-header">
+                    <div class="info-card-icon">🚗</div>
+                    <h3>Infrastructure</h3>
+                </div>
+                <ul>
+                    <li>🛣️ State Highway 11 (Kaithal-Patiala)</li>
+                    <li>🚂 Railway: Kaithal Station (15-20km)</li>
+                    <li>🏥 Community Health Centre</li>
+                    <li>🌾 Anaaj Mandi (Grain Market)</li>
+                    <li>⚡ Electricity: 24/7 Supply</li>
+                    <li>💧 Water: Municipal Supply</li>
+                </ul>
+            </div>
+
+            <div class="info-card" data-observe>
+                <div class="info-card-header">
+                    <div class="info-card-icon">🌾</div>
+                    <h3>Economy</h3>
+                </div>
+                <ul>
+                    <li>🌾 Primary Sector: Agriculture</li>
+                    <li>🌾 Main Crops: Wheat & Paddy</li>
+                    <li>🏪 Grain Market: Active Trading</li>
+                    <li>👥 Employment: Agri-based</li>
+                    <li>💼 Services: Growing Sector</li>
+                    <li>🏢 Small Industries: Emerging</li>
+                </ul>
+            </div>
+
+            <div class="info-card" data-observe>
+                <div class="info-card-header">
+                    <div class="info-card-icon">🕉️</div>
+                    <h3>Heritage</h3>
+                </div>
+                <ul>
+                    <li>📜 Name Origin: Siyavan (Sita's Forest)</li>
+                    <li>🏛️ Naanga Baba Ashram</li>
+                    <li>🕉️ Prachi Shiv Mandir (Ancient)</li>
+                    <li>🙏 Lav Kush Tirath (Nearby)</li>
+                    <li>📿 48 Kos Parikrama Route</li>
+                    <li>⛩️ Seetvan/Swargdwara Tirtha</li>
+                </ul>
+            </div>
+
+            <div class="info-card" data-observe>
+                <div class="info-card-header">
+                    <div class="info-card-icon">👥</div>
+                    <h3>Demographics</h3>
+                </div>
+                <ul>
+                    <li>👨 Male: 54.5%</li>
+                    <li>👩 Female: 45.5%</li>
+                    <li>📚 Literacy: 70.51%</li>
+                    <li>👨‍🎓 Male Literacy: 77.28%</li>
+                    <li>👩‍🎓 Female Literacy: 63.06%</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="villageModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        ↑
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Municipal Committee & Ward Members -->
+<section class="section" style="background: var(--card-bg);">
+    <div class="section-header" data-observe>
+        <h2 class="section-title">Municipal Committee Siwan (Kaithal)</h2>
+        <p class="section-subtitle">Elected Representatives – 2025</p>
+    </div>
+
+    <!-- Chairperson -->
+    <div class="info-grid">
+        <div class="info-card" data-observe>
+            <div class="info-card-header">
+                <div class="info-card-icon">👤</div>
+                <h3>Chairperson</h3>
+            </div>
+            <ul>
+                <li><strong>Name:</strong> Hemlata Saini</li>
+                <li><strong>Party:</strong> BJP</li>
+                <li><strong>Body:</strong> Municipal Committee, Siwan</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Ward Members -->
+    <div class="info-grid" style="margin-top: 3rem;">
+        <div class="info-card" data-observe><h3>Ward No. 01</h3><p>Sanjay Kansal</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 02</h3><p>Sukhdev</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 03</h3><p>Mausam</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 04</h3><p>Manjit</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 05</h3><p>Beant Kaur</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 06</h3><p>Sonu Kumar</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 07</h3><p>Satnam Kaur</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 08</h3><p>Shri Ram</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 09</h3><p>Dharmendra Sharma</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 10</h3><p>Jyoti</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 11</h3><p>Dolly Saini</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 12</h3><p>Manish Kumar</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 13</h3><p>Vikas Kumar</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 14</h3><p>Ramdas</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 15</h3><p>Jitender Sharma</p></div>
+        <div class="info-card" data-observe><h3>Ward No. 16</h3><p>Renu Bala</p></div>
+    </div>
+</section>
+
+        <div class="footer-content">
+            <p class="footer-text">
+                <strong>Siwan Block</strong> | Kaithal District, Haryana, India<br>
+                Community Development Block serving 41 villages<br>
+                Municipal Committee Chairperson: Hemlata Saini (BJP)
+            </p>
+            <p class="footer-text" style="margin-top: 1.5rem; opacity: 0.8;">
+                A harmonious blend of rich heritage, cultural values, and modern progress
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Village Data
+        const villages = [
+            { name: "Ajit Nagar", mainCrop: "Wheat, Paddy" },
+            { name: "Andhli", mainCrop: "Wheat, Paddy" },
+            { name: "Atela", mainCrop: "Wheat, Rice" },
+            { name: "Bhuna", mainCrop: "Wheat, Paddy", schools: "Shishu Niketan Sr. Sec. School" },
+            { name: "Dharampura", mainCrop: "Wheat" },
+            { name: "Dohar", mainCrop: "Paddy, Wheat" },
+            { name: "Farsh Majra", mainCrop: "Wheat" },
+            { name: "Ferozepur", mainCrop: "Wheat, Rice" },
+            { name: "Gogh Village", mainCrop: "Paddy" },
+            { name: "Gohran", mainCrop: "Wheat, Paddy" },
+            { name: "Harnola", mainCrop: "Wheat", schools: "Govt. Primary School" },
+            { name: "Janedpur", mainCrop: "Rice" },
+            { name: "Kakeor Majra", mainCrop: "Wheat" },
+            { name: "Kakheri", mainCrop: "Wheat, Paddy", schools: "The Millennium School, Govt. School" },
+            { name: "Kakrala Inayat", mainCrop: "Wheat" },
+            { name: "Kakrala Kuchiyan", mainCrop: "Paddy" },
+            { name: "Kangthali", mainCrop: "Wheat, Rice", schools: "Govt. Sr. Sec. School, Mata Gujri Sr. Sec. School" },
+            { name: "Kawartan", mainCrop: "Wheat, Paddy", schools: "Govt. Sr. Sec. School" },
+            { name: "Khanpur", mainCrop: "Wheat", schools: "Govt. Primary School" },
+            { name: "Kharkan", mainCrop: "Paddy" },
+            { name: "Kheri Gulamali", mainCrop: "Wheat, Rice", schools: "Govt. Sr. Sec. School" },
+            { name: "Ladana Chaku", mainCrop: "Wheat, Paddy", schools: "Govt. High School" },
+            { name: "Lander Keema", mainCrop: "Wheat" },
+            { name: "Lander Peerzada", mainCrop: "Paddy" },
+            { name: "Malakpur", mainCrop: "Wheat", schools: "Govt. Primary School" },
+            { name: "Mandi Sadra", mainCrop: "Rice" },
+            { name: "Manjhlan", mainCrop: "Wheat" },
+            { name: "Nagal", mainCrop: "Paddy, Wheat" },
+            { name: "Paharpur", mainCrop: "Wheat" },
+            { name: "Papsar", mainCrop: "Rice" },
+            { name: "Parbhawat", mainCrop: "Wheat, Paddy", heritage: "Brahmavarta Tirtha" },
+            { name: "Polar", mainCrop: "Wheat, Rice", schools: "B P R Public School (Dera Himmatpura)" },
+            { name: "Poswal", mainCrop: "Paddy" },
+            { name: "Ramdas Pur", mainCrop: "Wheat" },
+            { name: "Rasulpur", mainCrop: "Wheat, Rice" },
+            { name: "Sair", mainCrop: "Paddy", schools: "Govt. School" },
+            { name: "Sotha", mainCrop: "Wheat, Paddy", schools: "Govt. High School, Govt. Primary School, Satya Bharti Primary" },
+            { name: "Theh Kharak", mainCrop: "Wheat", schools: "Govt. Sr. Sec. School (Kharak)" },
+            { name: "Theh Mukerian", mainCrop: "Rice" },
+            { name: "Umedpur", mainCrop: "Wheat" },
+            { name: "Urlana", mainCrop: "Paddy, Wheat" }
+        ];
+
+        // Populate Villages Grid
+        const villagesGrid = document.getElementById('villagesGrid');
+        villages.forEach((village, index) => {
+            const card = document.createElement('div');
+            card.className = 'village-card';
+            card.onclick = () => openVillageModal(village);
+            card.innerHTML = `
+                <div class="village-name">
+                    <span class="village-icon">🏘️</span>
+                    ${village.name}
+                </div>
+                <div class="village-info">Main Crops: ${village.mainCrop}</div>
+            `;
+            villagesGrid.appendChild(card);
+        });
+
+        // Modal Functions
+        function openVillageModal(village) {
+            const modal = document.getElementById('villageModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = village.name;
+            
+            let content = `
+                <div class="detail-section">
+                    <h3>📊 Demographics</h3>
+                    <ul class="detail-list">
+                        <li><strong>Block:</strong> <span>Siwan</span></li>
+                        <li><strong>District:</strong> <span>Kaithal</span></li>
+                        <li><strong>State:</strong> <span>Haryana</span></li>
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <h3>🌾 Economy & Agriculture</h3>
+                    <ul class="detail-list">
+                        <li><strong>Primary Occupation:</strong> <span>Agriculture</span></li>
+                        <li><strong>Main Crops:</strong> <span>${village.mainCrop}</span></li>
+                        <li><strong>Market Access:</strong> <span>Siwan Anaaj Mandi</span></li>
+                        <li><strong>Agricultural Type:</strong> <span>Irrigated Farming</span></li>
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <h3>🏫 Education & Infrastructure</h3>
+                    <ul class="detail-list">
+                        ${village.schools ? `<li><strong>Schools:</strong> <span>${village.schools}</span></li>` : '<li><strong>Schools:</strong> <span>Nearby villages or Siwan town</span></li>'}
+                        <li><strong>Healthcare:</strong> <span>CHC Siwan</span></li>
+                        <li><strong>Police:</strong> <span>Siwan Police Station</span></li>
+                        <li><strong>Post Office:</strong> <span>Siwan - 136033</span></li>
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <h3>🚗 Connectivity</h3>
+                    <ul class="detail-list">
+                        <li><strong>Main Road:</strong> <span>State Highway 11 (Kaithal-Patiala)</span></li>
+                        <li><strong>Nearest Town:</strong> <span>Siwan (Block HQ)</span></li>
+                        <li><strong>Nearest Railway:</strong> <span>Kaithal Station (15-20 km)</span></li>
+                        <li><strong>District HQ:</strong> <span>Kaithal</span></li>
+                    </ul>
+                </div>
+
+                ${village.heritage ? `
+                <div class="detail-section">
+                    <h3>🕉️ Heritage & Culture</h3>
+                    <ul class="detail-list">
+                        <li><strong>Religious Site:</strong> <span>${village.heritage}</span></li>
+                        <li><strong>Cultural Zone:</strong> <span>48 Kos Parikrama Area</span></li>
+                    </ul>
+                </div>
+                ` : `
+                <div class="detail-section">
+                    <h3>🕉️ Heritage & Culture</h3>
+                    <ul class="detail-list">
+                        <li><strong>Cultural Zone:</strong> <span>Part of Kurukshetra Region</span></li>
+                        <li><strong>Religious Access:</strong> <span>Nearby temples and ashrams</span></li>
+                    </ul>
+                </div>
+                `}
+
+                <div class="detail-section">
+                    <h3>📋 Administrative Details</h3>
+                    <ul class="detail-list">
+                        <li><strong>Constituency:</strong> <span>Guhla (SC)</span></li>
+                        <li><strong>Block:</strong> <span>Siwan Community Development Block</span></li>
+                        <li><strong>Tehsil:</strong> <span>Kaithal</span></li>
+                        <li><strong>Pincode:</strong> <span>136033</span></li>
+                    </ul>
+                </div>
+            `;
+
+            modalBody.innerHTML = content;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('villageModal').classList.remove('active');
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('villageModal');
+            if (event.target == modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        // Toggle Schools List
+        function toggleSchools(id) {
+            const list = document.getElementById(id);
+            list.classList.toggle('expanded');
+        }
+
+        // Scroll to Top
+        const scrollTop = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate bars
+                    const bars = entry.target.querySelectorAll('[data-animate]');
+                    bars.forEach((bar, index) => {
+                        setTimeout(() => {
+                            bar.classList.add('animate');
+                        }, index * 150);
+                    });
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-observe]').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Canvas-based Pie Charts
+        function drawPieChart(canvasId, data, colors) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width = 300;
+            const height = canvas.height = 300;
+            const centerX = width / 2;
+            const centerY = height / 2;
+            const radius = Math.min(width, height) / 2 - 20;
+
+            let currentAngle = -Math.PI / 2;
+            let animationProgress = 0;
+            const animationDuration = 2000;
+            const startTime = Date.now();
+
+            function animate() {
+                const elapsed = Date.now() - startTime;
+                animationProgress = Math.min(elapsed / animationDuration, 1);
+                
+                // Apply easing
+                const eased = 1 - Math.pow(1 - animationProgress, 3);
+
+                ctx.clearRect(0, 0, width, height);
+                
+                let tempAngle = -Math.PI / 2;
+                data.forEach((value, index) => {
+                    const sliceAngle = (2 * Math.PI * value / 100) * eased;
+                    
+                    // Draw slice
+                    ctx.beginPath();
+                    ctx.moveTo(centerX, centerY);
+                    ctx.arc(centerX, centerY, radius, tempAngle, tempAngle + sliceAngle);
+                    ctx.closePath();
+                    
+                    // Gradient fill
+                    const gradient = ctx.createLinearGradient(
+                        centerX - radius, centerY - radius,
+                        centerX + radius, centerY + radius
+                    );
+                    gradient.addColorStop(0, colors[index][0]);
+                    gradient.addColorStop(1, colors[index][1]);
+                    
+                    ctx.fillStyle = gradient;
+                    ctx.fill();
+                    
+                    // Border
+                    ctx.strokeStyle = '#1a1f2e';
+                    ctx.lineWidth = 3;
+                    ctx.stroke();
+                    
+                    tempAngle += sliceAngle;
+                });
+
+                // Draw inner circle for donut effect
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius * 0.6, 0, 2 * Math.PI);
+                ctx.fillStyle = '#1a1f2e';
+                ctx.fill();
+
+                if (animationProgress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            }
+
+            // Start animation when visible
+            const chartObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animate();
+                        chartObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            chartObserver.observe(canvas);
+        }
+
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            // Draw charts
+            drawPieChart('genderPieChart', [54.5, 45.5], [
+                ['#ff6b35', '#ff8c61'],
+                ['#3a86ff', '#6ba3ff']
+            ]);
+
+            drawPieChart('schoolsPieChart', [56.5, 43.5], [
+                ['#ff6b35', '#ff8c61'],
+                ['#3a86ff', '#6ba3ff']
+            ]);
+        });
+    </script>
+</body>
+</html>
